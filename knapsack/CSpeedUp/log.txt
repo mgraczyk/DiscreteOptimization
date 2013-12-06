@@ -1,0 +1,35 @@
+In file included from /usr/include/python2.7/Python.h:8:0,
+                 from solve_it.cpp:4:
+/usr/include/python2.7/pyconfig.h:1173:0: warning: "_POSIX_C_SOURCE" redefined [enabled by default]
+ #define _POSIX_C_SOURCE 200112L
+ ^
+In file included from /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h:39:0,
+                 from /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h:420,
+                 from /usr/include/c++/4.8.1/cstring:41,
+                 from solve_it.cpp:1:
+/usr/include/features.h:168:0: note: this is the location of the previous definition
+ # define _POSIX_C_SOURCE 200809L
+ ^
+In file included from /usr/include/python2.7/Python.h:8:0,
+                 from solve_it.cpp:4:
+/usr/include/python2.7/pyconfig.h:1195:0: warning: "_XOPEN_SOURCE" redefined [enabled by default]
+ #define _XOPEN_SOURCE 600
+ ^
+In file included from /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h:39:0,
+                 from /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h:420,
+                 from /usr/include/c++/4.8.1/cstring:41,
+                 from solve_it.cpp:1:
+/usr/include/features.h:170:0: note: this is the location of the previous definition
+ # define _XOPEN_SOURCE 700
+ ^
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/../../../../lib/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+/tmp/ccZXLDT3.o: In function `solve_it':
+solve_it.cpp:(.text+0x91): undefined reference to `PyMem_Malloc'
+solve_it.cpp:(.text+0xa6): undefined reference to `PyMem_Malloc'
+solve_it.cpp:(.text+0x167): undefined reference to `PyMem_Malloc'
+solve_it.cpp:(.text+0x3ed): undefined reference to `PyMem_Malloc'
+solve_it.cpp:(.text+0x4c9): undefined reference to `PyMem_Free'
+solve_it.cpp:(.text+0x4d5): undefined reference to `PyMem_Free'
+solve_it.cpp:(.text+0x4e1): undefined reference to `PyMem_Free'
+collect2: error: ld returned 1 exit status

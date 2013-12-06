@@ -7,4 +7,5 @@
 *.pdf
 *.swp
 *.vcxproj*
+*.pyd
 
