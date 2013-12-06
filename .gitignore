@@ -1,0 +1,10 @@
+*~
+*.pyc
+
+*.sln
+*.suo
+*.java
+*.pdf
+*.swp
+*.vcxproj*
+
