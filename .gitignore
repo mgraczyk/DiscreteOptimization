@@ -8,4 +8,5 @@
 *.swp
 *.vcxproj*
 *.pyd
+*.o
 
