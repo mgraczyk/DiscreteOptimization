@@ -75,11 +75,12 @@ def solveDynFwd(values, weights, capacity):
 
     
 def solveIt(inputData):
-    #lib = cdll.LoadLibrary('D:\School\Coursera\DiscreteOptimization\knapsack\CSpeedUp.pyd');
-    lib = cdll.LoadLibrary('./CSpeedUp.pyd')
+    lib = cdll.LoadLibrary('./solve_it.pyd')
     lib.solve_it.restype = ctypes.c_char_p
     lib.solve_it.argtypes = [ctypes.c_char_p]
-    return lib.solve_it(ctypes.create_string_buffer(inputData))
+    inputBytes = bytes(inputData, encoding='ascii')
+    result = lib.solve_it(ctypes.create_string_buffer(inputBytes))
+    return str(result, encoding='ascii')
 
 def solveItSlow(inputData):
     # Modify this code to run your optimization algorithm
