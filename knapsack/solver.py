@@ -1,10 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 import sys
 import ctypes
 from ctypes import cdll
 import logging
+
+from numpy import array
+from numpy import zeros
+from numpy import int32
 
 
 def solveTriv(values, weights, capacity):
@@ -27,17 +31,21 @@ def solveTriv(values, weights, capacity):
 
     
 def solveDynFwd(values, weights, capacity):
-    rows = capacity+1
-    cols = len(values)+1
+    values = array(values, dtype=int32)
+    weights = array(weights, dtype=int32)
 
-    zeros = [0]*cols
-    table = [zeros[:] for i in range(rows)]
-    
+    numRows = capacity+1
+    numCols = len(values)+1
+
+    table = zeros((numRows, numCols), dtype=int32)
+    rows = array(range(1, numRows), dtype=int32)
+    cols = array(range(1, numCols), dtype=int32)
+
     print("Building Table...")
-    
-    for row in range(1, rows):
-        for col in range(1, cols):
-            logging.debug("(row,col) = (%d, %s)"%(row, col))
+    for row in rows:
+        for col in cols:
+            #print("(row,col) = (%d, %s)"%(row, col))
+            #logging.debug("(row,col) = (%d, %s)"%(row, col))
             if (weights[col-1] <= row):
                 table[row][col] = max(table[row][col-1], values[col-1] + table[row - weights[col-1]][col-1])
             else:
@@ -50,7 +58,7 @@ def solveDynFwd(values, weights, capacity):
     print("Tracking backward...")
     #logging.debug("Table: " + str(table))
     
-    (taken, value, isOpt) = ([0 for x in xrange(len(values))], table[row][col], 1)
+    (taken, value, isOpt) = ([0 for x in range(len(values))], table[row][col], 1)
 
     # Pull the items out one by one
     rem = capacity
@@ -83,8 +91,8 @@ def solveItSlow(inputData):
     items = int(firstLine[0])
     capacity = int(firstLine[1])
 
-    values = [0 for x in xrange(items)]
-    weights = [0 for x in xrange(items)]
+    values = [0 for x in range(items)]
+    weights = [0 for x in range(items)]
 
     for i in range(1, items+1):
         line = lines[i]
@@ -108,8 +116,7 @@ if __name__ == '__main__':
         inputDataFile = open(fileLocation, 'r')
         inputData = ''.join(inputDataFile.readlines())
         inputDataFile.close()
-        print(sys.argv)
-        if len(sys.argv) > 2 and (sys.argv[2] == '-slow'):
+        if "-slow" in sys.argv:
             print(solveItSlow(inputData))
         else:
             print(solveIt(inputData))
