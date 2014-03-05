@@ -9,4 +9,7 @@
 *.vcxproj*
 *.pyd
 *.o
+*.pdb
+*.sdf
+*.lib
 
