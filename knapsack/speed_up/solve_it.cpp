@@ -10,7 +10,7 @@ template<class T> T max(T a, T b) { return a > b ? a : b; }
 
 #define TBL_VAL(r, c) (table[(c)*rows + (r)])
 
-#define USE_PYMEM 1
+#define USE_PYMEM 0
 
 #if USE_PYMEM == 1
 #include "pymem.h"
@@ -28,7 +28,7 @@ template<class T> T max(T a, T b) { return a > b ? a : b; }
 
 extern "C" {
 
-#ifdef _MSCVER
+#ifdef _MSC_VER
 
 __declspec(dllexport)
 

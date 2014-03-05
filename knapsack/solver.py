@@ -6,9 +6,9 @@ import ctypes
 from ctypes import cdll
 import logging
 
-from numpy import array
-from numpy import zeros
-from numpy import int32
+#from numpy import array
+#from numpy import zeros
+#from numpy import int32
 
 
 def solveTriv(values, weights, capacity):
@@ -73,16 +73,16 @@ def solveDynFwd(values, weights, capacity):
         
     return (taken, value, isOpt)
 
-    
-def solveIt(inputData):
+def solve_it(inputData):
     lib = cdll.LoadLibrary('./solve_it.pyd')
     lib.solve_it.restype = ctypes.c_char_p
     lib.solve_it.argtypes = [ctypes.c_char_p]
-    inputBytes = bytes(inputData, encoding='ascii')
-    result = lib.solve_it(ctypes.create_string_buffer(inputBytes))
-    return str(result, encoding='ascii')
+    return lib.solve_it(ctypes.create_string_buffer(inputData))
+    #inputBytes = bytes(inputData, encoding='ascii')
+    #result = lib.solve_it(ctypes.create_string_buffer(inputBytes))
+    #return str(result, encoding='ascii')
 
-def solveItSlow(inputData):
+def solve_itSlow(inputData):
     # Modify this code to run your optimization algorithm
 
     # parse the input
@@ -118,8 +118,8 @@ if __name__ == '__main__':
         inputData = ''.join(inputDataFile.readlines())
         inputDataFile.close()
         if "-slow" in sys.argv:
-            print(solveItSlow(inputData))
+            print(solve_itSlow(inputData))
         else:
-            print(solveIt(inputData))
+            print(solve_it(inputData))
     else:
         print('This test requires an input file.  Please select one from the data directory. (i.e. python solver.py ./data/ks_4_0)')

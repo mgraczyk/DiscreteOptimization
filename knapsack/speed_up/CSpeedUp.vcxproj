@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EFB1CDA9-F4FC-4202-87AB-B02B67C6251F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CSpeedUp</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\..\</OutDir>
+    <TargetName>solve_it</TargetName>
+    <TargetExt>.pyd</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\..\</OutDir>
+    <TargetExt>.pyd</TargetExt>
+    <TargetName>solve_it</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\..\</OutDir>
+    <TargetExt>.pyd</TargetExt>
+    <TargetName>solve_it</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\..\</OutDir>
+    <TargetExt>.pyd</TargetExt>
+    <TargetName>solve_it</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CSPEEDUP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Python27\include;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Python27\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CSPEEDUP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Python27\include;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Python27\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CSPEEDUP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Python27\include;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Python27\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CSPEEDUP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Python27\include;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>C:\Python27\libs\python27.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Python27\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="solve_it.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Python27\include\abstract.h" />
+    <ClInclude Include="C:\Python27\include\asdl.h" />
+    <ClInclude Include="C:\Python27\include\ast.h" />
+    <ClInclude Include="C:\Python27\include\bitset.h" />
+    <ClInclude Include="C:\Python27\include\boolobject.h" />
+    <ClInclude Include="C:\Python27\include\bufferobject.h" />
+    <ClInclude Include="C:\Python27\include\bytearrayobject.h" />
+    <ClInclude Include="C:\Python27\include\bytesobject.h" />
+    <ClInclude Include="C:\Python27\include\bytes_methods.h" />
+    <ClInclude Include="C:\Python27\include\cellobject.h" />
+    <ClInclude Include="C:\Python27\include\ceval.h" />
+    <ClInclude Include="C:\Python27\include\classobject.h" />
+    <ClInclude Include="C:\Python27\include\cobject.h" />
+    <ClInclude Include="C:\Python27\include\code.h" />
+    <ClInclude Include="C:\Python27\include\codecs.h" />
+    <ClInclude Include="C:\Python27\include\compile.h" />
+    <ClInclude Include="C:\Python27\include\complexobject.h" />
+    <ClInclude Include="C:\Python27\include\cStringIO.h" />
+    <ClInclude Include="C:\Python27\include\datetime.h" />
+    <ClInclude Include="C:\Python27\include\descrobject.h" />
+    <ClInclude Include="C:\Python27\include\dictobject.h" />
+    <ClInclude Include="C:\Python27\include\dtoa.h" />
+    <ClInclude Include="C:\Python27\include\enumobject.h" />
+    <ClInclude Include="C:\Python27\include\errcode.h" />
+    <ClInclude Include="C:\Python27\include\eval.h" />
+    <ClInclude Include="C:\Python27\include\fileobject.h" />
+    <ClInclude Include="C:\Python27\include\floatobject.h" />
+    <ClInclude Include="C:\Python27\include\frameobject.h" />
+    <ClInclude Include="C:\Python27\include\funcobject.h" />
+    <ClInclude Include="C:\Python27\include\genobject.h" />
+    <ClInclude Include="C:\Python27\include\graminit.h" />
+    <ClInclude Include="C:\Python27\include\grammar.h" />
+    <ClInclude Include="C:\Python27\include\import.h" />
+    <ClInclude Include="C:\Python27\include\intobject.h" />
+    <ClInclude Include="C:\Python27\include\intrcheck.h" />
+    <ClInclude Include="C:\Python27\include\iterobject.h" />
+    <ClInclude Include="C:\Python27\include\listobject.h" />
+    <ClInclude Include="C:\Python27\include\longintrepr.h" />
+    <ClInclude Include="C:\Python27\include\longobject.h" />
+    <ClInclude Include="C:\Python27\include\marshal.h" />
+    <ClInclude Include="C:\Python27\include\memoryobject.h" />
+    <ClInclude Include="C:\Python27\include\metagrammar.h" />
+    <ClInclude Include="C:\Python27\include\methodobject.h" />
+    <ClInclude Include="C:\Python27\include\modsupport.h" />
+    <ClInclude Include="C:\Python27\include\moduleobject.h" />
+    <ClInclude Include="C:\Python27\include\node.h" />
+    <ClInclude Include="C:\Python27\include\object.h" />
+    <ClInclude Include="C:\Python27\include\objimpl.h" />
+    <ClInclude Include="C:\Python27\include\opcode.h" />
+    <ClInclude Include="C:\Python27\include\osdefs.h" />
+    <ClInclude Include="C:\Python27\include\parsetok.h" />
+    <ClInclude Include="C:\Python27\include\patchlevel.h" />
+    <ClInclude Include="C:\Python27\include\pgen.h" />
+    <ClInclude Include="C:\Python27\include\pgenheaders.h" />
+    <ClInclude Include="C:\Python27\include\pyarena.h" />
+    <ClInclude Include="C:\Python27\include\pycapsule.h" />
+    <ClInclude Include="C:\Python27\include\pyconfig.h" />
+    <ClInclude Include="C:\Python27\include\pyctype.h" />
+    <ClInclude Include="C:\Python27\include\pydebug.h" />
+    <ClInclude Include="C:\Python27\include\pyerrors.h" />
+    <ClInclude Include="C:\Python27\include\pyexpat.h" />
+    <ClInclude Include="C:\Python27\include\pyfpe.h" />
+    <ClInclude Include="C:\Python27\include\pygetopt.h" />
+    <ClInclude Include="C:\Python27\include\pymacconfig.h" />
+    <ClInclude Include="C:\Python27\include\pymactoolbox.h" />
+    <ClInclude Include="C:\Python27\include\pymath.h" />
+    <ClInclude Include="C:\Python27\include\pymem.h" />
+    <ClInclude Include="C:\Python27\include\pyport.h" />
+    <ClInclude Include="C:\Python27\include\pystate.h" />
+    <ClInclude Include="C:\Python27\include\pystrcmp.h" />
+    <ClInclude Include="C:\Python27\include\pystrtod.h" />
+    <ClInclude Include="C:\Python27\include\Python-ast.h" />
+    <ClInclude Include="C:\Python27\include\Python.h" />
+    <ClInclude Include="C:\Python27\include\pythonrun.h" />
+    <ClInclude Include="C:\Python27\include\pythread.h" />
+    <ClInclude Include="C:\Python27\include\py_curses.h" />
+    <ClInclude Include="C:\Python27\include\rangeobject.h" />
+    <ClInclude Include="C:\Python27\include\setobject.h" />
+    <ClInclude Include="C:\Python27\include\sliceobject.h" />
+    <ClInclude Include="C:\Python27\include\stringobject.h" />
+    <ClInclude Include="C:\Python27\include\structmember.h" />
+    <ClInclude Include="C:\Python27\include\structseq.h" />
+    <ClInclude Include="C:\Python27\include\symtable.h" />
+    <ClInclude Include="C:\Python27\include\sysmodule.h" />
+    <ClInclude Include="C:\Python27\include\timefuncs.h" />
+    <ClInclude Include="C:\Python27\include\token.h" />
+    <ClInclude Include="C:\Python27\include\traceback.h" />
+    <ClInclude Include="C:\Python27\include\tupleobject.h" />
+    <ClInclude Include="C:\Python27\include\ucnhash.h" />
+    <ClInclude Include="C:\Python27\include\unicodeobject.h" />
+    <ClInclude Include="C:\Python27\include\warnings.h" />
+    <ClInclude Include="C:\Python27\include\weakrefobject.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
